@@ -6,14 +6,19 @@
   $('.navbar-toggler').on('click', function() {
     if( ! $('#mainNav').hasClass('navbar-reduce')) {
       $('#mainNav').addClass('navbar-reduce');
+	  
+
     }
   })
 
   // Preloader
   $(window).on('load', function () {
     if ($('#frame').length) {
+		
       $('#frame').delay(5000).fadeOut('slow', function () {
         $(this).remove();
+		$('body').css('overflow','visible');
+	    $('html').css('overflow','visible');
       });
     }
   });
