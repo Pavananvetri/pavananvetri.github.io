@@ -32,7 +32,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: 1;
+  z-index: 0;
 }
 #particles2-js {
   position: fixed;
@@ -686,9 +686,15 @@ a:hover {
   position: absolute;
   width:100%;
   top: 10px;
-  left: 15%; 
+  left:2%; 
 }
- 
+@media (max-width:500px) {
+  .navbar-b .navbar-brand {
+  
+    top: 25%;
+    left:5%; 
+  }
+}
 @media (min-width:760px) {
   .navbar-b.navbar-trans .nav-link{
     padding-top: 0px;
@@ -982,31 +988,131 @@ a:hover {
 /--//-->  RESUME
 ======================================*/
 .resume-mf {
-  background-color: #000000;
-  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #000000;  
+  margin:0;
+  padding: 0;
+  z-index: 1000;
+}
+.resume-mf .container-fluid {
+  margin:0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.resume-mf .title-box .title-a{
-  color:#000;
+.resume-mf .content-item {
+  width:100%;
+  left: 10%;
+  bottom: 10%;
 }
-.resume-mf .title-box .subtitle-a{
-  color:#000;
+.resume-mf .modal-layer {
+  inset: 0;
+
+  background: rgba(0, 0, 0, 1);
+  display: none;
+  z-index: 1000;
 }
-.resume-mf .title-box .btn{
-  margin-top: 1rem;
-  color:#fff;
-  font-size: 2rem;
-  background-color: #1B1B1B;
-  width: 10rem;
-  border-radius: 15px;
+.resume-mf .modal-layer .slide-img {
+  width:100%;
+  height: 100%;
+  background-size:contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.resume-mf .modal-layer .slide-img i{
+ color:#0078ff;
+}
+.resume-mf .modal-layer .slide-img #closeBtn{
+  position: absolute;
+  right: 20px; /* Adjust as necessary to position near the next arrow */
+  top: 20px; /* Adjust based on your design */
+  cursor: pointer; /* Makes it clear the icon is clickable */
 }
 
-.resume-mf .title-box .btn:hover{
-  margin-top: 1rem;
-  color:#fff;
-  font-size: 2rem;
-  background-color: rgb(49, 62, 170);
+
+.resume-mf .project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.resume-mf .project .row {
+
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position:relative;
+
+  /* border-radius: 10px; */
+}
+@media (min-width:720px) {
+  .resume-mf .project {
+   margin-top: 10%;
+   margin-bottom: 10%;
+   margin-bottom: 0px;
+  }
+
+
+}
+.resume-mf .project-grid {
+  padding:5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position:relative;
+  background-color: white;
+  /* border-radius: 10px; */
+}
+.resume-mf .project-grid a{
+  display: block;
+}
+.resume-mf .project-grid a img{
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width:730px) {
+
+  .resume-mf .project .row {
+
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    position:relative;
+  
+    /* border-radius: 10px; */
+  }
+  .resume-mf .project-grid {
+    padding:5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    overflow: hidden;
+    position:relative;
+    background-color: white;
+    /* border-radius: 10px; */
+  }
+
+}
+
+
+
+
+/* .resume-mf .images {
+  margin:0;
+  background: cover;
+}
+
+.resume-mf .images .thumb .img-responsive {
+  margin:0;
+  background: cover;
+  
+} */
 
 
 
@@ -1042,31 +1148,30 @@ a:hover {
 /*======================================
 //--//-->   CONTACT
 ======================================*/
-.bg-img {
-  margin-top: 10%;
-  margin-left: -36%;
-  padding-top: 5%;
-  background-color: #ffffff2c;
-  width: 100vw;
-  height: 42vh;
-  justify-items: center;
-  text-align: center;
-  background-size: contain, cover;
 
-}
 
 .background-set {
- margin-top: -25%;
+  margin-top: 0%;
   padding: 30px;
   background-color: #ffffff2c;
+
  
 }
 
+@media (min-width:720px) {
+  .background-set {
+  margin-top: -25%;
 
+
+ 
+  }
+  
+}
 .footer-paralax {
   padding:0;
   margin-top: 10rem;
   width: 100%;
+ 
 }
 
 .contact-mf {
@@ -1082,8 +1187,8 @@ a:hover {
   margin:0;
   justify-content: center;
   align-items: center;
-  height:45vh;
   width: 100%;
+  
 }
 @media (max-width:500px) {
   .contact-mf {
@@ -1098,9 +1203,12 @@ a:hover {
 @media (min-width:501px) and (max-width:798px) {
   .contact-mf {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   }
   
+}
+.contact-mf .contact .row ul {
+  z-index: 9999;
 }
 /*======================================
 //--//-->   FOOTER
@@ -1110,18 +1218,22 @@ footer {
   text-align: center;
   color: #fff;
   padding-bottom: 2rem;
+
 }
 
 footer .copyright {
   margin-bottom: .3rem;
+
 }
 
 footer .credits {
   margin-bottom: 0;
+
 }
 
 footer .credits a {
   color: #fff;
+
 }
 
 /*======================================
