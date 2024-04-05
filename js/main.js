@@ -608,7 +608,8 @@ particlesJS("particles-js", {
 	itemsImgs[i].addEventListener("click", function (e) {
 	console.log(i)
 	  popSlider.style.display = "flex";
-	  
+	  let slider = document.querySelector("#resume");
+	  document.body.style.overflow = "hidden";
 	  let activeSrc = e.target.src;
 	  splitUrl = activeSrc.split("img/");
 	  activeSrc = splitUrl[0]+subimages[i][0];
@@ -625,6 +626,7 @@ particlesJS("particles-js", {
   closeBtn.addEventListener("click", removeSlider);
   
   function removeSlider() {
+	document.body.style.overflow = "visible";
 	popSlider.style.display = "none";
   }
   
