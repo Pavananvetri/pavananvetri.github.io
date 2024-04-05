@@ -597,7 +597,7 @@ particlesJS("particles-js", {
   // index of item
   let urlString = "http://127.0.0.1:5500/pavananvetri.github.io/img/Adaptive%20design/Pavanan%20Portfolio-36.png";
 
-
+  let slider = document.querySelector(".back-to-top img");
 // splitUrl[0] will contain "http://127.0.0.1:5500/pavananvetri.github.io/"
 // To include "img/" in the first part, you can append it back
 
@@ -608,8 +608,9 @@ particlesJS("particles-js", {
 	itemsImgs[i].addEventListener("click", function (e) {
 	console.log(i)
 	  popSlider.style.display = "flex";
-	  let slider = document.querySelector("#resume");
+	  
 	  document.body.style.overflow = "hidden";
+	  slider.style.opacity=0;
 	  let activeSrc = e.target.src;
 	  splitUrl = activeSrc.split("img/");
 	  activeSrc = splitUrl[0]+subimages[i][0];
@@ -626,6 +627,7 @@ particlesJS("particles-js", {
   closeBtn.addEventListener("click", removeSlider);
   
   function removeSlider() {
+	slider.style.opacity=0.65;
 	document.body.style.overflow = "visible";
 	popSlider.style.display = "none";
   }
